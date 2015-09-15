@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="9">
+      <Unit0>
+        <Filename Value="libraries.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="15"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="units\ulibraries.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uLibraries"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="12"/>
+        <CursorPos Y="38"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\common\defs\udefs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uDefs"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="3" Y="12"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\common\fpgext\ufglext.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="22"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="units\upickitem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uPickItem"/>
+        <EditorIndex Value="3"/>
+        <CursorPos Y="9"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="units\ubase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uBase"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="19" Y="28"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="units\udescription.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uDescription"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="13" Y="9"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="d:\soft\lazarus\fpc\2.6.4\source\rtl\objpas\fgl.pp"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="108"/>
+        <CursorPos X="72" Y="104"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="units\upicklist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uPickList"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="54" Y="31"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit8>
+    </Units>
+  </ProjectSession>
+</CONFIG>

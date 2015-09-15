@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="11">
+      <Unit0>
+        <Filename Value="TestLibraries.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="units\utestpickitem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uTestPickItem"/>
+        <TopLine Value="7"/>
+        <CursorPos X="60" Y="44"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\src\libraries\units\ubase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\src\libraries\units\udescription.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\src\libraries\units\ulibraries.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\src\libraries\units\upickitem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\..\src\common\defs\udefs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\src\common\fpgext\ufglext.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\src\common\fpgext\ufglextcls.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="21"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uPickList"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="13" Y="101"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="units\utestpicklist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uTestPickList"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="17"/>
+        <CursorPos X="54" Y="46"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit10>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="118" TopLine="74"/>
+      </Position1>
+      <Position2>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="120" TopLine="74"/>
+      </Position2>
+      <Position3>
+        <Filename Value="units\utestpicklist.pas"/>
+        <Caret Line="38"/>
+      </Position3>
+      <Position4>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="111" TopLine="74"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="112" TopLine="74"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="118" TopLine="74"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="120" TopLine="74"/>
+      </Position7>
+      <Position8>
+        <Filename Value="units\utestpicklist.pas"/>
+        <Caret Line="39"/>
+      </Position8>
+      <Position9>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="111" TopLine="74"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="112" TopLine="74"/>
+      </Position10>
+      <Position11>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="114" TopLine="74"/>
+      </Position11>
+      <Position12>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="115" Column="21" TopLine="74"/>
+      </Position12>
+      <Position13>
+        <Filename Value="units\utestpicklist.pas"/>
+        <Caret Line="37"/>
+      </Position13>
+      <Position14>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="111" TopLine="74"/>
+      </Position14>
+      <Position15>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="112" TopLine="74"/>
+      </Position15>
+      <Position16>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="118" TopLine="74"/>
+      </Position16>
+      <Position17>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="120" TopLine="74"/>
+      </Position17>
+      <Position18>
+        <Filename Value="units\utestpicklist.pas"/>
+        <Caret Line="38"/>
+      </Position18>
+      <Position19>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="111" TopLine="74"/>
+      </Position19>
+      <Position20>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="112" TopLine="74"/>
+      </Position20>
+      <Position21>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="118" TopLine="74"/>
+      </Position21>
+      <Position22>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="120" TopLine="74"/>
+      </Position22>
+      <Position23>
+        <Filename Value="units\utestpicklist.pas"/>
+        <Caret Line="39"/>
+      </Position23>
+      <Position24>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="111" TopLine="74"/>
+      </Position24>
+      <Position25>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="112" TopLine="74"/>
+      </Position25>
+      <Position26>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="114" TopLine="74"/>
+      </Position26>
+      <Position27>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="115" TopLine="74"/>
+      </Position27>
+      <Position28>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="116" TopLine="74"/>
+      </Position28>
+      <Position29>
+        <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
+        <Caret Line="120" TopLine="74"/>
+      </Position29>
+      <Position30>
+        <Filename Value="units\utestpicklist.pas"/>
+        <Caret Line="80" Column="35" TopLine="42"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="9">
+      <Unit0>
+        <Filename Value="TestFglExt.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="56" Y="14"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="units\utestinterfacefpglist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uTestInterfaceFpgList"/>
+        <TopLine Value="77"/>
+        <CursorPos X="41" Y="63"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\src\common\fpgext\ufglext.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uFglExt"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="11" Y="5"/>
+        <FoldState Value=" TJI182o"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\src\common\fpgext\ufglextcls.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uFglExtCls"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="39" Y="3"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="d:\soft\lazarus\fpc\2.6.4\source\rtl\objpas\fgl.pp"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="1221"/>
+        <CursorPos X="29" Y="1233"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="d:\soft\lazarus\fpc\2.6.4\source\packages\fcl-fpcunit\src\fpcunit.pp"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="4"/>
+        <CursorPos X="33" Y="87"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="d:\soft\lazarus\components\fpcunit\guitestrunner.pas"/>
+        <UnitName Value="GuiTestRunner"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="284"/>
+        <CursorPos Y="310"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uTestInterfaceFpgMap"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="20"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="80"/>
+        <CursorPos X="40" Y="104"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit8>
+    </Units>
+    <JumpHistory Count="13" HistoryIndex="12">
+      <Position1>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="108" TopLine="69"/>
+      </Position1>
+      <Position2>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="109" TopLine="69"/>
+      </Position2>
+      <Position3>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="110" TopLine="69"/>
+      </Position3>
+      <Position4>
+        <Filename Value="d:\soft\lazarus\fpc\2.6.4\source\rtl\objpas\fgl.pp"/>
+        <Caret Line="250" Column="14" TopLine="218"/>
+      </Position4>
+      <Position5>
+        <Filename Value="d:\soft\lazarus\fpc\2.6.4\source\rtl\objpas\fgl.pp"/>
+        <Caret Line="1224" TopLine="1221"/>
+      </Position5>
+      <Position6>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="104" Column="25" TopLine="69"/>
+      </Position6>
+      <Position7>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="103" Column="45" TopLine="69"/>
+      </Position7>
+      <Position8>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="109" Column="12" TopLine="69"/>
+      </Position8>
+      <Position9>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="114" Column="17" TopLine="69"/>
+      </Position9>
+      <Position10>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="105" Column="6" TopLine="74"/>
+      </Position10>
+      <Position11>
+        <Filename Value="units\utestinterfacefpgmap.pas"/>
+        <Caret Line="112" Column="26" TopLine="79"/>
+      </Position11>
+      <Position12>
+        <Filename Value="d:\soft\lazarus\fpc\2.6.4\source\rtl\objpas\fgl.pp"/>
+        <Caret Line="1626" Column="25" TopLine="1614"/>
+      </Position12>
+      <Position13>
+        <Filename Value="d:\soft\lazarus\fpc\2.6.4\source\rtl\objpas\fgl.pp"/>
+        <Caret Line="1465" Column="3" TopLine="1462"/>
+      </Position13>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="d:\soft\lazarus\fpc\2.6.4\source\rtl\objpas\fgl.pp"/>
+        <Line Value="1224"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>
