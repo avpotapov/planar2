@@ -35,6 +35,7 @@ var
   I: integer;
   PickItem: IPickItem;
 begin
+  // Тест добавления
   I := fPickList.Add(1);
   if I > 0 then
   begin

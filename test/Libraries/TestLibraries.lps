@@ -90,9 +90,8 @@
         <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uPickList"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="13" Y="101"/>
+        <CursorPos X="3" Y="48"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit9>
@@ -100,9 +99,10 @@
         <Filename Value="units\utestpicklist.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uTestPickList"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="17"/>
-        <CursorPos X="54" Y="46"/>
+        <CursorPos X="21" Y="38"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit10>
