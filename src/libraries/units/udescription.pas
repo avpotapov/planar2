@@ -10,8 +10,8 @@ uses
   uFglExtCls;
 
 type
-  TDescriptionSpec = specialize TFpgListExt<string>;
-  TDescription = class(specialize TFpgListExt<string>, specialize IClone<IDescription>)
+  TDescriptionSpec = specialize TFpgListExt<widestring>;
+  TDescription = class(specialize TFpgListExt<widestring>, specialize IClonable<IDescription>)
   public
     function Clone(const {%H-}aDeep: boolean = True): IDescription;
   end;
@@ -22,7 +22,7 @@ implementation
 
 function TDescription.Clone(const aDeep: boolean): IDescription;
 var
-  S: string;
+  S: widestring;
 begin
   Result := TDescription.Create as IDescription;
   for S in Self do

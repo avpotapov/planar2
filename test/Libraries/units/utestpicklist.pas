@@ -87,7 +87,7 @@ procedure TTestPickList.TestClone;
 var
   I: integer;
   PickItem: IPickItem;
-  ClonedPickList: IClonedPickList;
+  ClonedPickList: IClonablePickList;
   PickList: IPickList;
   Ptr: Pointer;
   S: string;
@@ -135,7 +135,7 @@ begin
     AssertEquals(PickItem.Description.Count, 4);
   end;
 
-  if Supports(fPickList, IClonedPickList, ClonedPickList) then
+  if Supports(fPickList, IClonablePickList, ClonedPickList) then
   	PickList := ClonedPickList.Clone;
 
   fPickList.Clear;

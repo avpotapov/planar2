@@ -10,21 +10,21 @@ uses
   uBaseMap;
 
 type
-  TPickLists = specialize TBaseMap<string, IPickList>;
+  TPickLists = specialize TBaseMap<widestring, IPickList>;
   TPickListSpec = specialize TBaseMap<word, IPickItem>;
 
   { TPickList }
 
-  TPickList = class(TPickListSpec, IPickList, IClonedPickList)
+  TPickList = class(TPickListSpec, IPickList, IClonablePickList)
   private
     fPickLists: TPickLists;
-    fName: string;
-    fShortDescription: string;
+    fName: widestring;
+    fShortDescription: widestring;
   protected
-    function GetName: string;
-    procedure SetName(const aName: string);
-    function GetShortDescription: string;
-    procedure SetShortDescription(const aShortDescription: string);
+    function GetName: widestring;
+    procedure SetName(const aName: widestring);
+    function GetShortDescription: widestring;
+    procedure SetShortDescription(const aShortDescription: widestring);
   public
     function Clone(const aDeep: boolean = True): IPickList;
     constructor Create(const aPickLists: TPickLists = nil); overload;
@@ -39,7 +39,7 @@ uses uPickItem;
 
 {$REGION PickList}
 
-function TPickList.GetName: string;
+function TPickList.GetName: widestring;
 var
   FoundIndex: integer;
 begin
@@ -53,7 +53,7 @@ begin
   Result := fPickLists.Keys[FoundIndex];
 end;
 
-procedure TPickList.SetName(const aName: string);
+procedure TPickList.SetName(const aName: widestring);
 var
   I: integer;
 begin
@@ -80,12 +80,12 @@ begin
   end;
 end;
 
-function TPickList.GetShortDescription: string;
+function TPickList.GetShortDescription: widestring;
 begin
   Result := fShortDescription;
 end;
 
-procedure TPickList.SetShortDescription(const aShortDescription: string);
+procedure TPickList.SetShortDescription(const aShortDescription: widestring);
 begin
   fShortDescription := aShortDescription;
 end;
@@ -93,7 +93,7 @@ end;
 function TPickList.Clone(const aDeep: boolean): IPickList;
 var
   Ptr: Pointer;
-  ClonedPickItem: IClonedPickItem;
+  ClonablePickItem: IClonablePickItem;
   PickItem: IPickItem;
 begin
   Result := TPickList.Create(fPickLists) as IPickList;
@@ -101,9 +101,9 @@ begin
   begin
     case aDeep of
       True:
-        if Supports(ExtractData(Ptr), IClonedPickItem, ClonedPickItem) then
+        if Supports(ExtractData(Ptr), IClonablePickItem, ClonablePickItem) then
         begin
-          PickItem := ClonedPickItem.Clone(aDeep);
+          PickItem := ClonablePickItem.Clone(aDeep);
           (PickItem as TPickItem).SetPickList(Result as TPickList);
         end;
       False:

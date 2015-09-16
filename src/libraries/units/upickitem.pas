@@ -14,28 +14,27 @@ uses
 type
   { TPickItem }
 
-  TPickItem = class(TBase, IPickItem, IClonedPickItem)
+  TPickItem = class(TBase, IPickItem, IClonablePickItem)
   private
     fPickList: TPickList;
-    fName: string;
-    fShortDescription: string;
+    fName: widestring;
+    fShortDescription: widestring;
     fDescription: IDescription;
-    fVer: string;
+    fVer: widestring;
   private
     function GetValue: word;
     procedure SetValue(const aValue: word);
 
-    function GetName: string;
-    procedure SetName(const aName: string);
+    function GetName: widestring;
+    procedure SetName(const aName: widestring);
 
-    function GetShortDescription: string;
-    procedure SetShortDescription(const aShortDescription: string);
+    function GetShortDescription: widestring;
+    procedure SetShortDescription(const aShortDescription: widestring);
 
     function GetDescription: IDescription;
-    procedure SetDescription(const aDescription: IDescription);
 
-    function GetVer: string;
-    procedure SetVer(const aVer: string);
+    function GetVer: widestring;
+    procedure SetVer(const aVer: widestring);
 
   public
     constructor Create(const aPickList: TPickList = nil); reintroduce;
@@ -58,7 +57,7 @@ end;
 
 function TPickItem.Clone(const aDeep: boolean): IPickItem;
 var
-  ClonedDescription: IClonedDescription;
+  ClonableDescription: IClonableDescription;
   Desc: IDescription;
 begin
   Result := TPickItem.Create as IPickItem;
@@ -69,10 +68,10 @@ begin
   Desc := GetDescription;
   case aDeep of
     True:
-      if aDeep and Supports(Desc, IClonedDescription, ClonedDescription) then
-        Result.Description := ClonedDescription.Clone;
+      if aDeep and Supports(Desc, IClonableDescription, ClonableDescription) then
+        (Result as TPickItem).fDescription := ClonableDescription.Clone;
     False:
-      Result.Description := GetDEscription;
+       (Result as TPickItem).fDescription := GetDEscription;
   end;
 
 end;
@@ -123,23 +122,23 @@ begin
   end;
 end;
 
-function TPickItem.GetName: string;
+function TPickItem.GetName: widestring;
 begin
   Result := fName;
 end;
 
-procedure TPickItem.SetName(const aName: string);
+procedure TPickItem.SetName(const aName: widestring);
 begin
   if not SameText(fName, aName) then
     fName := aName;
 end;
 
-function TPickItem.GetShortDescription: string;
+function TPickItem.GetShortDescription: widestring;
 begin
   Result := fShortDescription;
 end;
 
-procedure TPickItem.SetShortDescription(const aShortDescription: string);
+procedure TPickItem.SetShortDescription(const aShortDescription: widestring);
 begin
   if not SameText(fShortDescription, aShortDescription) then
     fShortDescription := aShortDescription;
@@ -152,18 +151,12 @@ begin
   Result := fDescription;
 end;
 
-procedure TPickItem.SetDescription(const aDescription: IDescription);
-begin
-  if fDescription <> aDescription then
-    fDescription := aDescription;
-end;
-
-function TPickItem.GetVer: string;
+function TPickItem.GetVer: widestring;
 begin
   Result := fVer;
 end;
 
-procedure TPickItem.SetVer(const aVer: string);
+procedure TPickItem.SetVer(const aVer: widestring);
 begin
   if not SameText(fVer, aVer) then
     fVer := aVer;

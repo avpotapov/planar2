@@ -10,29 +10,29 @@ uses
   uLibraries;
 
 type
-  TBitsSet = specialize TBaseMap<string, IBits>;
+  TBitsSet = specialize TBaseMap<widestring, IBits>;
   TBitsSpec = specialize TBaseMap<byte, IBitDefine>;
 
   { TBits }
 
-  TBits = class(TBitsSpec, IBits, IClonedBits)
+  TBits = class(TBitsSpec, IBits, IClonableBits)
   private
     fBitsSet: TBitsSet;
-    fShortDescription: string;
+    fShortDescription: widestring;
   protected
-    function GetName: string;
-    procedure SetName(const aName: string);
+    function GetName: widestring;
+    procedure SetName(const aName: widestring);
 
-    function GetShortDescription: string;
-    procedure SetShortDescription(const aShortDescription: string);
+    function GetShortDescription: widestring;
+    procedure SetShortDescription(const aShortDescription: widestring);
   public
     function Clone(const aDeep: boolean = True): IBits;
     constructor Create(const aBitsSet: TBitsSet); overload;
 
   public
     function Add(const AKey: TKey): integer; reintroduce;
-    property Name: string read GetName write SetName;
-    property ShortDescription: string read GetShortDescription write SetShortDescription;
+    property Name: widestring read GetName write SetName;
+    property ShortDescription: widestring read GetShortDescription write SetShortDescription;
   end;
 
 
@@ -42,7 +42,7 @@ uses uBitDefine;
 
 {$REGION Bits}
 
-function TBits.GetName: string;
+function TBits.GetName: widestring;
 var
   FoundIndex: integer;
 begin
@@ -55,7 +55,7 @@ begin
   Result := fBitsSet.Keys[FoundIndex];
 end;
 
-procedure TBits.SetName(const aName: string);
+procedure TBits.SetName(const aName: widestring);
 var
   I: integer;
 begin
@@ -82,12 +82,12 @@ begin
 
 end;
 
-function TBits.GetShortDescription: string;
+function TBits.GetShortDescription: widestring;
 begin
   Result := fShortDescription;
 end;
 
-procedure TBits.SetShortDescription(const aShortDescription: string);
+procedure TBits.SetShortDescription(const aShortDescription: widestring);
 begin
   if not SameText(fShortDescription, aShortDescription) then
     fShortDescription := aShortDescription;
@@ -96,7 +96,7 @@ end;
 function TBits.Clone(const aDeep: boolean): IBits;
 var
   Ptr: Pointer;
-  ClonedBitDefine: IClonedBitDefine;
+  ClonableBitDefine: IClonableBitDefine;
   BitDefine: IBitDefine;
 begin
   Result := TBits.Create(fBitsSet) as IBits;
@@ -104,9 +104,9 @@ begin
   begin
     case aDeep of
       True:
-        if Supports(ExtractData(Ptr), IClonedBitDefine, ClonedBitDefine) then
+        if Supports(ExtractData(Ptr), IClonableBitDefine, ClonableBitDefine) then
         begin
-          BitDefine := ClonedBitDefine.Clone(aDeep);
+          BitDefine := ClonableBitDefine.Clone(aDeep);
           (BitDefine as TBitDefine).SetBits(Result as TBits);
         end;
       False:

@@ -4,7 +4,7 @@ program TestLibraries;
 
 uses
   Interfaces, Forms, GuiTestRunner, uTestPickItem, uTestPickList, 
-utestdescription;
+utestdescription, utestvardefine;
 
 {$R *.res}
 

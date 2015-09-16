@@ -16,6 +16,7 @@ const
 
 type
   IBase = interface;
+  IVarDefine = interface;
   IPickList = interface;
   IPickItem = interface;
   IBits = interface;
@@ -42,7 +43,7 @@ type
   end;
 
   // Интерфейс клонирования объекта
-  generic IClone<T> = interface
+  generic IClonable<T> = interface
     ['{FE984462-7A03-49C3-97DB-0FC89DC6F3ED}']
     function Clone(const aDeep: boolean = True): T;
   end;
@@ -51,33 +52,99 @@ type
 {$ENDREGION}
 
   // Интерфейс многострочного текста
-  IDescription = specialize IFpgList<string>;
-  IClonedDescription = specialize IClone<IDescription>;
+  IDescription = specialize IFpgList<widestring>;
+  IClonableDescription = specialize IClonable<IDescription>;
 
 
   // Описание переменной
   IVarDefine = interface(IBase)
     ['{F4641ADE-3469-4079-992C-1B62B9FD32EB}']
 
+    function GetAccess: TAccess;
+    procedure SetAccess(const aAccess: TAccess);
+    property Access: TAccess read GetAccess write SetAccess;
+
+    function GetVarType: TVarType;
+    procedure SetVarType(const aVarType: TVarType);
+    property VarType: TVarType read GetVarType write SetVarType;
+
+    function GetKind: TKind;
+    procedure SetKind(const aKind: TKind);
+    property Kind: TKind read GetKind write SetKind;
+
+    function GetReadAlways: Boolean;
+    procedure SetReadAlways(const aReadAlways: Boolean);
+    property ReadAlways: Boolean read GetReadAlways write SetReadAlways;
+
+    function GetDescription: IDescription;
+    property Description: IDescription read GetDescription;
+
+    function GetMultipler: DWord;
+    procedure SetMultipler(const aMultipler: DWord);
+    property Multipler: DWord read GetMultipler write SetMultipler;
+
+    function GetIndex: Word;
+    procedure SetIndex(const aIndex: Word);
+    property Index: Word read GetIndex write SetIndex;
+
+    function GetName: widestring;
+    procedure SetName(const aName: widestring);
+    property Name: widestring read GetName write SetName;
+
+    function GetTypeRegister: TTypeRegister;
+    property TypeRegister: TTypeRegister read GetTypeRegister;
+
+    function GetShortDescription: widestring;
+    procedure SetShortDescription(const aShortDescription: widestring);
+    property ShortDescription: widestring read GetShortDescription write SetShortDescription;
+
+    function GetSingleRequest: Boolean;
+    procedure SetSingleRequest(const aSingleRequest: Boolean);
+    property SingleRequest: Boolean read GetSingleRequest write SetSingleRequest;
+
+    function GetUid: widestring;
+    property Uid: widestring read GetUid;
+
+    function GetVer: widestring;
+    procedure SetVer(const aVer: widestring);
+    property Ver: widestring read GetVer write SetVer;
+
+    function GetSynchronization: TSynchronization;
+    procedure SetSynchronization(const aSynchronization: TSynchronization);
+    property Synchronization: TSynchronization
+      read GetSynchronization write SetSynchronization;
+
+    procedure SetMeasure(const aMeasure: widestring);
+    function GetMeasure: widestring;
+    property Measure: widestring read GetMeasure write SetMeasure;
+
+    function GetBits: IBits;
+    procedure SetBits(const aBits: IBits);
+    property Bits: IBits read GetBits write SetBits;
+
+    function GetPickList: IPickList;
+    procedure SetPickList(const aPickList: IPickList);
+    property Picklist: IPickList read GetPickList write SetPickList;
 
   end;
+  IClonableVarDefine = specialize IClonable<IVarDefine>;
 
 
   // Список
   IPickList = interface(specialize IBaseMap<word, IPickItem>)
     ['{A325ECFD-7226-4405-99E7-64D1CBA0FAE8}']
 
-    function GetName: string;
-    procedure SetName(const aName: string);
-    property Name: string read GetName write SetName;
+    function GetName: widestring;
+    procedure SetName(const aName: widestring);
+    property Name: widestring read GetName write SetName;
 
-    function GetShortDescription: string;
-    procedure SetShortDescription(const aShortDescription: string);
-    property ShortDescription: string read GetShortDescription write SetShortDescription;
+    function GetShortDescription: widestring;
+    procedure SetShortDescription(const aShortDescription: widestring);
+    property ShortDescription: widestring read GetShortDescription write SetShortDescription;
 
     property PickItem[aItem: word]: TData read GetKeyData; default;
   end;
-  IClonedPickList = specialize IClone<IPickList>;
+  IClonablePickList = specialize IClonable<IPickList>;
 
   // Элемент списка
   IPickItem = interface(IBase)
@@ -87,38 +154,37 @@ type
     procedure SetValue(const aValue: word);
     property Value: word read GetValue write SetValue;
 
-    function GetName: string;
-    procedure SetName(const aName: string);
-    property Name: string read GetName write SetName;
+    function GetName: widestring;
+    procedure SetName(const aName: widestring);
+    property Name: widestring read GetName write SetName;
 
-    function GetShortDescription: string;
-    procedure SetShortDescription(const aShortDescription: string);
-    property ShortDescription: string read GetShortDescription write SetShortDescription;
+    function GetShortDescription: widestring;
+    procedure SetShortDescription(const aShortDescription: widestring);
+    property ShortDescription: widestring read GetShortDescription write SetShortDescription;
 
     function GetDescription: IDescription;
-    procedure SetDescription(const aDescription: IDescription);
-    property Description: IDescription read GetDescription write SetDescription;
+    property Description: IDescription read GetDescription;
 
-    function GetVer: string;
-    procedure SetVer(const aVer: string);
-    property Ver: string read GetVer write SetVer;
+    function GetVer: widestring;
+    procedure SetVer(const aVer: widestring);
+    property Ver: widestring read GetVer write SetVer;
   end;
-  IClonedPickItem = specialize IClone<IPickItem>;
+  IClonablePickItem = specialize IClonable<IPickItem>;
 
   // Набор битов
   IBits = interface(specialize IBaseMap<byte, IBitDefine>)
     ['{EF5D002E-EC55-4A5D-B369-AD4B1DF8BA71}']
-    function GetName: string;
-    procedure SetName(const aName: string);
-    property Name: string read GetName write SetName;
+    function GetName: widestring;
+    procedure SetName(const aName: widestring);
+    property Name: widestring read GetName write SetName;
 
-    function GetShortDescription: String;
-    procedure SetShortDescription(const aShortDescription: String);
-    property ShortDescription: String read GetShortDescription write SetShortDescription;
+    function GetShortDescription: widestring;
+    procedure SetShortDescription(const aShortDescription: widestring);
+    property ShortDescription: widestring read GetShortDescription write SetShortDescription;
 
     property BitDefine[aBit: byte]: TData read GetKeyData; default;
   end;
-  IClonedBits = specialize IClone<IBits>;
+  IClonableBits = specialize IClonable<IBits>;
 
   // Описание бита
   IBitDefine = interface(IBase)
@@ -128,22 +194,22 @@ type
     procedure SetIndex(const aIndex: byte);
     property Index: byte read GetIndex write SetIndex;
 
-    function GetName: string;
-    procedure SetName(const aName: string);
-    property Name: string read GetName write SetName;
+    function GetName: widestring;
+    procedure SetName(const aName: widestring);
+    property Name: widestring read GetName write SetName;
 
-    function GetShortDescription: string;
-    procedure SetShortDescription(const aShortDescription: string);
-    property ShortDescription: string read GetShortDescription write SetShortDescription;
+    function GetShortDescription: widestring;
+    procedure SetShortDescription(const aShortDescription: widestring);
+    property ShortDescription: widestring read GetShortDescription write SetShortDescription;
 
     function GetDescription: IDescription;
     property Description: IDescription read GetDescription;
 
-    function GetVer: string;
-    procedure SetVer(const aVer: string);
-    property Ver: string read GetVer write SetVer;
+    function GetVer: widestring;
+    procedure SetVer(const aVer: widestring);
+    property Ver: widestring read GetVer write SetVer;
   end;
-  IClonedBitDefine = specialize IClone<IBitDefine>;
+  IClonableBitDefine = specialize IClonable<IBitDefine>;
 
 implementation
 

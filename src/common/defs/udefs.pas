@@ -70,19 +70,19 @@ TTypeSignature  = (sgNone = 0, sgAuto, sgRccu);
 TTypeBootloader = (bl1 = 1, bl2, bl3);
 // Тип регистра: Holding, Input
 TTypeRegister   = (trHolding, trInput);
-TTypeRegisters = array[TTypeRegister] of String;
+TTypeRegisters = array[TTypeRegister] of widestring;
 
 // Уровень доступа: пользователь, производитель, сервис
 TAccess   = (acUser, acDeveloper, acService);
-TAccesses = array[TAccess] of String;
+TAccesses = array[TAccess] of widestring;
 
 // Разновидность переменной: обычный, калибровочный
 TKind  = (kdNormal, kdGauge);
-TKinds = array[TKind] of String;
+TKinds = array[TKind] of widestring;
 
 // Режимы синхронизации: 0 Двунаправленный, 1 Принудительный, 2 Только запись
 TSynchronization  = (syBedirectional, syForce, syReadOnly);
-TSynchronizations = array[TSynchronization] of String;
+TSynchronizations = array[TSynchronization] of widestring;
 
 
 // Тип переменной
@@ -112,7 +112,7 @@ TVarType = (
   vtPROC,
   vtUNKNOWN);
 
-TVarTypes = specialize TFPGMap<String, TVarType>;
+TVarTypes = specialize TFPGMap<widestring, TVarType>;
 {$ENDREGION Types, Declarations etc.}
 
 

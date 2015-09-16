@@ -9,7 +9,7 @@ uses
 
 type
 
-  ICloneSpec = specialize IClone<IDescription>;
+  ICloneSpec = specialize IClonable<IDescription>;
 
   { TTestDescription }
 
@@ -34,7 +34,7 @@ procedure TTestDescription.TestClone;
 var
   Clone: ICloneSpec;
   Desc: IDescription;
-  S: string;
+  S: widestring;
 begin
   fDescription.Add('String 1');
   fDescription.Add('String 2');
