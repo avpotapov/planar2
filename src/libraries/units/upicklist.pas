@@ -102,7 +102,10 @@ begin
     case aDeep of
       True:
         if Supports(ExtractData(Ptr), IClonedPickItem, ClonedPickItem) then
+        begin
           PickItem := ClonedPickItem.Clone(aDeep);
+          (PickItem as TPickItem).SetPickList(Result as TPickList);
+        end;
       False:
         PickItem := ExtractData(Ptr);
     end;

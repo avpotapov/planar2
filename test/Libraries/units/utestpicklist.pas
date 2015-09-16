@@ -159,6 +159,7 @@ begin
   begin
     Writeln('Key = ', PickList.ExtractKey(Ptr));
     PickItem := PickList.ExtractData(Ptr);
+    Writeln(' - ', PickItem.Value);
     Writeln(' - ', PickItem.Name);
     Writeln(' - ', PickItem.ShortDescription);
     for S in PickItem.Description do

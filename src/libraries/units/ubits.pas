@@ -105,7 +105,10 @@ begin
     case aDeep of
       True:
         if Supports(ExtractData(Ptr), IClonedBitDefine, ClonedBitDefine) then
+        begin
           BitDefine := ClonedBitDefine.Clone(aDeep);
+          (BitDefine as TBitDefine).SetBits(Result as TBits);
+        end;
       False:
         BitDefine := ExtractData(Ptr);
     end;

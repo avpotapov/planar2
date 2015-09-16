@@ -41,6 +41,9 @@ type
     constructor Create(const aPickList: TPickList = nil); reintroduce;
   public
     function Clone(const aDeep: boolean = True): IPickItem;
+
+    // Задействован при клонировании объекта
+    procedure SetPickList(const aPickList: TPickList);
   end;
 
 implementation
@@ -58,8 +61,7 @@ var
   ClonedDescription: IClonedDescription;
   Desc: IDescription;
 begin
-  Result := TPickItem.Create(fPickList) as IPickItem;
-  Result.Value := GetValue;
+  Result := TPickItem.Create as IPickItem;
   Result.Name := GetName;
   Result.ShortDescription := GetShortDescription;
   Result.Ver := GetVer;
@@ -73,6 +75,11 @@ begin
       Result.Description := GetDEscription;
   end;
 
+end;
+
+procedure TPickItem.SetPickList(const aPickList: TPickList);
+begin
+  fPickList := aPickList;
 end;
 
 function TPickItem.GetValue: word;

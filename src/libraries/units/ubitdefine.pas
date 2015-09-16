@@ -39,8 +39,12 @@ type
     procedure SetVer(const aVer: string);
 
   public
-    function Clone(const aDeep: boolean = True): IBitDefine;
     constructor Create(const aBits: TBits = nil); reintroduce;
+
+  public
+    function Clone(const aDeep: boolean = True): IBitDefine;
+    // Задействован при клонировании объекта
+    procedure SetBits(const aBits: TBits);
   end;
 
 
@@ -144,8 +148,7 @@ var
   ClonedDescription: IClonedDescription;
   Desc: IDescription;
 begin
-  Result := TBitDefine.Create(fBits) as IBitDefine;
-  Result.Index := GetIndex;
+  Result := TBitDefine.Create as IBitDefine;
   Result.Name := GetName;
   Result.ShortDescription := GetShortDescription;
   Result.Ver := GetVer;
@@ -159,6 +162,11 @@ begin
       Result.Description := GetDEscription;
   end;
 
+end;
+
+procedure TBitDefine.SetBits(const aBits: TBits);
+begin
+  fBits := aBits;
 end;
 
 {$ENDREGION BitDefine}
