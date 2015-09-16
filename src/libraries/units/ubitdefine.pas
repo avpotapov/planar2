@@ -1,4 +1,4 @@
-unit uPickItem;
+unit uBitDefine;
 
 {$mode objfpc}{$H+}
 
@@ -6,25 +6,25 @@ interface
 
 uses
   Classes, SysUtils,
-  uLibraries,
   uBase,
+  uBaseMap,
   uDescription,
-  uPickList;
+  uLibraries;
 
 type
+  TBits = specialize TBaseMap<byte, IBitDefine>;
 
-  { TPickItem }
-
-  TPickItem = class(TBase, IPickItem)
+  TBitDefine = class(TBase, IBitDefine)
   private
-    fPickList: TPickList;
+    fBits: TBits;
     fName: string;
     fShortDescription: string;
     fDescription: IDescription;
     fVer: string;
+
   private
-    function GetValue: word;
-    procedure SetValue(const aValue: word);
+    function GetIndex: byte;
+    procedure SetIndex(const aIndex: byte);
 
     function GetName: string;
     procedure SetName(const aName: string);
@@ -38,102 +38,107 @@ type
     procedure SetVer(const aVer: string);
 
   public
-    constructor Create(const aPickList: TPickList = nil); reintroduce;
-
+    constructor Create(const aBits: TBits = nil); reintroduce;
   end;
+
+
 
 implementation
 
-{$REGION PickItem}
+{$REGION BitDefine}
 
-constructor TPickItem.Create(const aPickList: TPickList);
+constructor TBitDefine.Create(const aBits: TBits);
 begin
   inherited Create;
-  fPickList := aPickList;
+  fBits := aBits;
 end;
 
-function TPickItem.GetValue: word;
-begin
-  if fPickList = nil then
-  begin
-    fLastError := CONTAINER_IS_NIL;
-    Exit;
-  end;
-
-  if fPickList <> nil then
-    Result := fPickList.Keys[fPickList.IndexOfData(Self)];
-end;
-
-procedure TPickItem.SetValue(const aValue: word);
+function TBitDefine.GetIndex: byte;
 var
   I: integer;
 begin
-  if fPickList = nil then
+  if fBits = nil then
   begin
     fLastError := CONTAINER_IS_NIL;
     Exit;
   end;
 
-  if GetValue = aValue then
+  I := fBits.IndexOfData(Self);
+  Result := fBits.Keys[I];
+end;
+
+procedure TBitDefine.SetIndex(const aIndex: byte);
+var
+  I: integer;
+begin
+  if fBits = nil then
+  begin
+    fLastError := CONTAINER_IS_NIL;
+    Exit;
+  end;
+
+  if GetIndex = aIndex then
     Exit;
 
-  // Для изменения ключа отключаем сортировку
-  fPickList.Sorted := False;
+  // Для изменения ключа отключается сортировка
+  fBits.Sorted := False;
   try
     // В случае дубликата возбуждается исключение
-    if fPickList.Find(aValue, I) then
+    if fBits.Find(aIndex, I) then
     begin
       fLastError := DUPLICATE_KEY;
       Exit;
     end;
     // Записывается новое значение ключа
-    fPickList.Keys[fPickList.IndexOfData(Self)] := aValue;
+    fBits.Keys[fBits.IndexOfData(Self)] := aIndex;
   finally
-    fPickList.Sorted := True;
+    fBits.Sorted := True;
   end;
+
 end;
 
-function TPickItem.GetName: string;
+function TBitDefine.GetName: string;
 begin
   Result := fName;
 end;
 
-procedure TPickItem.SetName(const aName: string);
+procedure TBitDefine.SetName(const aName: string);
 begin
   if not SameText(fName, aName) then
     fName := aName;
 end;
 
-function TPickItem.GetShortDescription: string;
+function TBitDefine.GetShortDescription: string;
 begin
   Result := fShortDescription;
 end;
 
-procedure TPickItem.SetShortDescription(const aShortDescription: string);
+procedure TBitDefine.SetShortDescription(const aShortDescription: string);
 begin
   if not SameText(fShortDescription, aShortDescription) then
     fShortDescription := aShortDescription;
 end;
 
-function TPickItem.GetDescription: IDescription;
+function TBitDefine.GetDescription: IDescription;
 begin
   if fDescription = nil then
     fDescription := TDescription.Create as IDescription;
   Result := fDescription;
 end;
 
-function TPickItem.GetVer: string;
+function TBitDefine.GetVer: string;
 begin
   Result := fVer;
 end;
 
-procedure TPickItem.SetVer(const aVer: string);
+procedure TBitDefine.SetVer(const aVer: string);
 begin
   if not SameText(fVer, aVer) then
     fVer := aVer;
 end;
 
-{$ENDREGION PickItem}
+{$ENDREGION BitDefine}
+
 
 end.
 

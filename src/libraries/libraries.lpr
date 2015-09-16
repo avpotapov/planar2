@@ -8,7 +8,10 @@ uses
   uDefs,
   uPickItem,
   uBase,
-  uDescription, uPickList;
+  uDescription,
+  uPickList,
+  uBitDefine,
+  uBaseMap, uBits;
 
 {$R *.res}
 

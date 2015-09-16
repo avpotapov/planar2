@@ -7,33 +7,28 @@ interface
 uses
   Classes, SysUtils,
   uLibraries,
-  uFglExtCls;
+  uBaseMap;
 
 type
-  TPickLists = specialize TFpgMapExt<string, IPickList>;
-  TPickListSpec = specialize TFpgMapExt<word, IPickItem>;
+  TPickLists = specialize TBaseMap<string, IPickList>;
+  TPickListSpec = specialize TBaseMap<word, IPickItem>;
 
   { TPickList }
 
-  TPickList = class(TPickListSpec, IPickList, IBase)
+  TPickList = class(TPickListSpec, IPickList)
   private
-    fLastError: Integer;
    	fPickLists: TPickLists;
     fName: string;
     fShortDescription: string;
   protected
     function GetName: string;
     procedure SetName(const aName: string);
-
     function GetShortDescription: String;
     procedure SetShortDescription(const aShortDescription: String);
   public
     constructor Create(const aPickLists: TPickLists = nil); overload;
-    function GetLastError: integer;
-   public
+  public
     function Add(const AKey: TKey): Integer; reintroduce;
-    property Name: string read GetName write SetName;
-    property ShortDescription: String read GetShortDescription write SetShortDescription;
   end;
 
 
@@ -99,12 +94,6 @@ begin
   inherited Create;
   fPicklists := aPicklists;
 end;
-
-function TPickList.GetLastError: integer;
-begin
-    Result := fLastError;
-end;
-
 
 function TPickList.Add(const AKey: TKey): Integer;
 var
