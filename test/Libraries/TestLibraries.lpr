@@ -3,7 +3,8 @@ program TestLibraries;
 {$mode objfpc}{$H+}
 
 uses
-  Interfaces, Forms, GuiTestRunner, uTestPickItem, uTestPickList;
+  Interfaces, Forms, GuiTestRunner, uTestPickItem, uTestPickList, 
+utestdescription;
 
 {$R *.res}
 

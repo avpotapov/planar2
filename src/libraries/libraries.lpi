@@ -24,7 +24,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="20"/>
+      <BuildNr Value="23"/>
       <Language Value="0419"/>
       <Attributes pvaDebug="True"/>
       <StringTable ProductVersion=""/>
@@ -40,7 +40,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="11">
+    <Units Count="12">
       <Unit0>
         <Filename Value="libraries.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -94,6 +94,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uBits"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="units\uvardefine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uVarDefine"/>
+      </Unit11>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

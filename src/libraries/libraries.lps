@@ -17,8 +17,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uLibraries"/>
         <EditorIndex Value="3"/>
-        <CursorPos X="19" Y="13"/>
-        <FoldState Value=" TJI1Jx"/>
+        <TopLine Value="13"/>
+        <CursorPos X="26" Y="10"/>
+        <FoldState Value=" TJN1Jd"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -73,28 +74,23 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uPickList"/>
         <EditorIndex Value="5"/>
-        <CursorPos X="27" Y="59"/>
+        <TopLine Value="7"/>
+        <CursorPos Y="13"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="d:\soft\lazarus\fpc\2.6.4\source\rtl\objpas\fgl.pp"/>
-        <EditorIndex Value="10"/>
-        <TopLine Value="107"/>
-        <CursorPos X="72" Y="104"/>
-        <UsageCount Value="12"/>
-        <Loaded Value="True"/>
-      </Unit8>
-      <Unit9>
         <Filename Value="units\ubitdefine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uBitDefine"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="30" Y="66"/>
+        <TopLine Value="92"/>
+        <CursorPos X="3" Y="41"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
-      </Unit9>
-      <Unit10>
+      </Unit8>
+      <Unit9>
         <Filename Value="units\ubasemap.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uBaseMap"/>
@@ -102,13 +98,22 @@
         <CursorPos X="40" Y="10"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
-      </Unit10>
-      <Unit11>
+      </Unit9>
+      <Unit10>
         <Filename Value="units\ubits.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uBits"/>
         <EditorIndex Value="2"/>
-        <CursorPos Y="12"/>
+        <TopLine Value="19"/>
+        <CursorPos X="17" Y="39"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="units\uvardefine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uVarDefine"/>
+        <EditorIndex Value="10"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit11>

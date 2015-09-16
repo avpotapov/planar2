@@ -11,7 +11,7 @@ uses
   uDescription,
   uPickList,
   uBitDefine,
-  uBaseMap, uBits;
+  uBaseMap, uBits, uVarDefine;
 
 {$R *.res}
 

@@ -71,7 +71,6 @@ type
 { TFpgMapExt }
 
 generic TFpgMapExt<TKey, TData> = class(specialize TFPGMap<TKey, TData>, IUnknown, specialize IFpgMap<TKey, TData>)
-
 protected
  	fRefCount : longint;
 private

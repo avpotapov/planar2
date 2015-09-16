@@ -39,7 +39,7 @@
         <PackageName Value="FCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="14">
       <Unit0>
         <Filename Value="TestLibraries.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -56,14 +56,17 @@
       <Unit3>
         <Filename Value="..\..\src\libraries\units\udescription.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="uDescription"/>
       </Unit3>
       <Unit4>
         <Filename Value="..\..\src\libraries\units\ulibraries.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="uLibraries"/>
       </Unit4>
       <Unit5>
         <Filename Value="..\..\src\libraries\units\upickitem.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="uPickItem"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\src\common\defs\udefs.pas"/>
@@ -76,6 +79,7 @@
       <Unit8>
         <Filename Value="..\..\src\common\fpgext\ufglextcls.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="uFglExtCls"/>
       </Unit8>
       <Unit9>
         <Filename Value="..\..\src\libraries\units\upicklist.pas"/>
@@ -87,6 +91,20 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uTestPickList"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="units\utestdescription.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\..\src\libraries\units\ubitdefine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uBitDefine"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\..\src\libraries\units\ubits.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uBits"/>
+      </Unit13>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

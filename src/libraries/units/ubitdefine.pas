@@ -7,14 +7,15 @@ interface
 uses
   Classes, SysUtils,
   uBase,
-  uBaseMap,
   uDescription,
-  uLibraries;
+  uLibraries,
+  uBits;
 
 type
-  TBits = specialize TBaseMap<byte, IBitDefine>;
 
-  TBitDefine = class(TBase, IBitDefine)
+  { TBitDefine }
+
+  TBitDefine = class(TBase, IBitDefine, IClonedBitDefine)
   private
     fBits: TBits;
     fName: string;
@@ -38,6 +39,7 @@ type
     procedure SetVer(const aVer: string);
 
   public
+    function Clone(const aDeep: boolean = True): IBitDefine;
     constructor Create(const aBits: TBits = nil); reintroduce;
   end;
 
@@ -135,6 +137,28 @@ procedure TBitDefine.SetVer(const aVer: string);
 begin
   if not SameText(fVer, aVer) then
     fVer := aVer;
+end;
+
+function TBitDefine.Clone(const aDeep: boolean): IBitDefine;
+var
+  ClonedDescription: IClonedDescription;
+  Desc: IDescription;
+begin
+  Result := TBitDefine.Create(fBits) as IBitDefine;
+  Result.Index := GetIndex;
+  Result.Name := GetName;
+  Result.ShortDescription := GetShortDescription;
+  Result.Ver := GetVer;
+
+  Desc := GetDescription;
+  case aDeep of
+    True:
+      if aDeep and Supports(Desc, IClonedDescription, ClonedDescription) then
+        Result.Description := ClonedDescription.Clone;
+    False:
+      Result.Description := GetDEscription;
+  end;
+
 end;
 
 {$ENDREGION BitDefine}

@@ -12,10 +12,9 @@ uses
   uPickList;
 
 type
-
   { TPickItem }
 
-  TPickItem = class(TBase, IPickItem)
+  TPickItem = class(TBase, IPickItem, IClonedPickItem)
   private
     fPickList: TPickList;
     fName: string;
@@ -33,13 +32,15 @@ type
     procedure SetShortDescription(const aShortDescription: string);
 
     function GetDescription: IDescription;
+    procedure SetDescription(const aDescription: IDescription);
 
     function GetVer: string;
     procedure SetVer(const aVer: string);
 
   public
     constructor Create(const aPickList: TPickList = nil); reintroduce;
-
+  public
+    function Clone(const aDeep: boolean = True): IPickItem;
   end;
 
 implementation
@@ -50,6 +51,28 @@ constructor TPickItem.Create(const aPickList: TPickList);
 begin
   inherited Create;
   fPickList := aPickList;
+end;
+
+function TPickItem.Clone(const aDeep: boolean): IPickItem;
+var
+  ClonedDescription: IClonedDescription;
+  Desc: IDescription;
+begin
+  Result := TPickItem.Create(fPickList) as IPickItem;
+  Result.Value := GetValue;
+  Result.Name := GetName;
+  Result.ShortDescription := GetShortDescription;
+  Result.Ver := GetVer;
+
+  Desc := GetDescription;
+  case aDeep of
+    True:
+      if aDeep and Supports(Desc, IClonedDescription, ClonedDescription) then
+        Result.Description := ClonedDescription.Clone;
+    False:
+      Result.Description := GetDEscription;
+  end;
+
 end;
 
 function TPickItem.GetValue: word;
@@ -122,6 +145,12 @@ begin
   Result := fDescription;
 end;
 
+procedure TPickItem.SetDescription(const aDescription: IDescription);
+begin
+  if fDescription <> aDescription then
+    fDescription := aDescription;
+end;
+
 function TPickItem.GetVer: string;
 begin
   Result := fVer;
@@ -136,4 +165,5 @@ end;
 {$ENDREGION PickItem}
 
 end.
+
 
