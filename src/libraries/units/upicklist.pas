@@ -7,27 +7,30 @@ interface
 uses
   Classes, SysUtils,
   uLibraries,
-  uBaseMap;
+  uBaseMap,
+  uVarDefine,
+  uPickLists;
 
 type
-  TPickLists = specialize TBaseMap<widestring, IPickList>;
-  TPickListSpec = specialize TBaseMap<word, IPickItem>;
 
-  { TPickList }
+  TPickListSpec = specialize TBaseMap<word, IPickItem>;
 
   TPickList = class(TPickListSpec, IPickList, IClonablePickList)
   private
     fPickLists: TPickLists;
-    fName: widestring;
-    fShortDescription: widestring;
+    fVarDefine: TVarDefine;
+    fName: WideString;
+    fShortDescription: WideString;
   protected
-    function GetName: widestring;
-    procedure SetName(const aName: widestring);
-    function GetShortDescription: widestring;
-    procedure SetShortDescription(const aShortDescription: widestring);
+    function GetName: WideString;
+    procedure SetName(const aName: WideString);
+    function GetShortDescription: WideString;
+    procedure SetShortDescription(const aShortDescription: WideString);
+    function GetVarDefine: IVarDefine;
   public
     function Clone(const aDeep: boolean = True): IPickList;
     constructor Create(const aPickLists: TPickLists = nil); overload;
+    constructor Create(const aVarDefine: TVarDefine); overload;
   public
     function Add(const AKey: TKey): integer; reintroduce;
   end;
@@ -39,7 +42,7 @@ uses uPickItem;
 
 {$REGION PickList}
 
-function TPickList.GetName: widestring;
+function TPickList.GetName: WideString;
 var
   FoundIndex: integer;
 begin
@@ -53,7 +56,7 @@ begin
   Result := fPickLists.Keys[FoundIndex];
 end;
 
-procedure TPickList.SetName(const aName: widestring);
+procedure TPickList.SetName(const aName: WideString);
 var
   I: integer;
 begin
@@ -80,14 +83,21 @@ begin
   end;
 end;
 
-function TPickList.GetShortDescription: widestring;
+function TPickList.GetShortDescription: WideString;
 begin
   Result := fShortDescription;
 end;
 
-procedure TPickList.SetShortDescription(const aShortDescription: widestring);
+procedure TPickList.SetShortDescription(const aShortDescription: WideString);
 begin
   fShortDescription := aShortDescription;
+end;
+
+function TPickList.GetVarDefine: IVarDefine;
+begin
+  Result := nil;
+  if fVarDefine <> nil then
+    Result := fVarDefine as IVarDefine;
 end;
 
 function TPickList.Clone(const aDeep: boolean): IPickList;
@@ -119,6 +129,12 @@ begin
   fPicklists := aPicklists;
 end;
 
+constructor TPickList.Create(const aVarDefine: TVarDefine);
+begin
+  inherited Create;
+  fVarDefine := aVarDefine;
+end;
+
 function TPickList.Add(const AKey: TKey): integer;
 var
   FoundIndex: integer;
@@ -136,4 +152,3 @@ end;
 {$ENDREGION PickList}
 
 end.
-

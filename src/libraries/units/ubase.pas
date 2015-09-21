@@ -9,8 +9,6 @@ uses
 
 type
 
-  { TBase }
-
   TBase = class(TInterfacedObject, IBase)
   protected
     fLastError: Integer;
@@ -19,8 +17,6 @@ type
   end;
 
 implementation
-
-{ TBase }
 
 function TBase.GetLastError: Integer;
 begin

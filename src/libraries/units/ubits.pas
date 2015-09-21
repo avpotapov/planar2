@@ -7,32 +7,38 @@ interface
 uses
   Classes, SysUtils,
   uBaseMap,
-  uLibraries;
+  uVarDefine,
+  uLibraries,
+  uBitsSet;
 
 type
-  TBitsSet = specialize TBaseMap<widestring, IBits>;
   TBitsSpec = specialize TBaseMap<byte, IBitDefine>;
-
-  { TBits }
 
   TBits = class(TBitsSpec, IBits, IClonableBits)
   private
+    fVarDefine: TVarDefine;
     fBitsSet: TBitsSet;
-    fShortDescription: widestring;
+    fShortDescription: WideString;
   protected
-    function GetName: widestring;
-    procedure SetName(const aName: widestring);
+    function GetName: WideString;
+    procedure SetName(const aName: WideString);
 
-    function GetShortDescription: widestring;
-    procedure SetShortDescription(const aShortDescription: widestring);
+    function GetShortDescription: WideString;
+    procedure SetShortDescription(const aShortDescription: WideString);
+
+    function GetVarDefine: IVarDefine;
+    function GetBitsSet: IBitsSet;
+  public
+
+    constructor Create(const aBitsSet: TBitsSet = nil); overload;
+    constructor Create(const aVarDefine: TVarDefine); overload;
+
   public
     function Clone(const aDeep: boolean = True): IBits;
-    constructor Create(const aBitsSet: TBitsSet); overload;
-
-  public
     function Add(const AKey: TKey): integer; reintroduce;
-    property Name: widestring read GetName write SetName;
-    property ShortDescription: widestring read GetShortDescription write SetShortDescription;
+    property Name: WideString read GetName write SetName;
+    property ShortDescription: WideString read GetShortDescription
+      write SetShortDescription;
   end;
 
 
@@ -42,7 +48,7 @@ uses uBitDefine;
 
 {$REGION Bits}
 
-function TBits.GetName: widestring;
+function TBits.GetName: WideString;
 var
   FoundIndex: integer;
 begin
@@ -55,7 +61,7 @@ begin
   Result := fBitsSet.Keys[FoundIndex];
 end;
 
-procedure TBits.SetName(const aName: widestring);
+procedure TBits.SetName(const aName: WideString);
 var
   I: integer;
 begin
@@ -82,15 +88,25 @@ begin
 
 end;
 
-function TBits.GetShortDescription: widestring;
+function TBits.GetShortDescription: WideString;
 begin
   Result := fShortDescription;
 end;
 
-procedure TBits.SetShortDescription(const aShortDescription: widestring);
+procedure TBits.SetShortDescription(const aShortDescription: WideString);
 begin
   if not SameText(fShortDescription, aShortDescription) then
     fShortDescription := aShortDescription;
+end;
+
+function TBits.GetVarDefine: IVarDefine;
+begin
+  Result := fVarDefine;
+end;
+
+function TBits.GetBitsSet: IBitsSet;
+begin
+  Result := fBitsSet;
 end;
 
 function TBits.Clone(const aDeep: boolean): IBits;
@@ -123,6 +139,12 @@ begin
   fBitsSet := aBitsSet;
 end;
 
+constructor TBits.Create(const aVarDefine: TVarDefine);
+begin
+  inherited Create;
+  fVarDefine := aVarDefine;
+end;
+
 
 function TBits.Add(const AKey: TKey): integer;
 var
@@ -142,4 +164,3 @@ end;
 
 
 end.
-

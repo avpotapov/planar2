@@ -5,7 +5,7 @@ unit utestvardefine;
 interface
 
 uses
-  Classes, SysUtils, uFglExt, uLibraries, uVarDefine, fpcunit, testregistry;
+  Classes, SysUtils, uLibraries, uVarDefine, fpcunit, testregistry;
 
 type
 

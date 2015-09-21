@@ -8,14 +8,11 @@ uses
   Classes, SysUtils,
   uDefs,
   uBase,
-  uBaseMap,
   uDescription,
   uLibraries,
-  uPickList,
-  uBits;
+  uVars;
 
 type
-  TVars = specialize TBaseMap<TTypeRegister, IVarDefine>;
 
   { TVarDefine }
 
@@ -72,6 +69,7 @@ type
     function GetUid: WideString;
     function GetVarType: TVarType;
     function GetVer: WideString;
+    function GetVars: IVars;
     procedure SetAccess(const aAccess: TAccess);
     procedure SetBits(const aBits: IBits);
     procedure SetIndex(const aIndex: word);
@@ -86,6 +84,7 @@ type
     procedure SetSynchronization(const aSynchronization: TSynchronization);
     procedure SetVarType(const aVarType: TVarType);
     procedure SetVer(const aVer: WideString);
+
   public
     constructor Create(const aVars: TVars = nil);
   public
@@ -94,6 +93,10 @@ type
   end;
 
 implementation
+
+uses
+  uPickList,
+  uBits;
 
 {$REGION VarDefine}
 
@@ -201,8 +204,7 @@ end;
 
 function TVarDefine.GetTypeRegister: TTypeRegister;
 begin
-  Exception.Create('Not inplementation');
-  //  Result := fVars.fTypeRegister;
+  Result := fVars.TypeRegister;
 end;
 
 function TVarDefine.GetShortDescription: WideString;
@@ -228,17 +230,18 @@ begin
 end;
 
 function TVarDefine.GetUid: WideString;
-var
-  I: integer;
 begin
-  Exception.Create('Not Inplementation');
-  //I := fVars.IndexOfData(Self);
-  //Result := fVars.Keys[I];
+  Result := fVars.Keys[fVars.IndexOfData(Self as IVarDefine)];
 end;
 
 function TVarDefine.GetVer: WideString;
 begin
   Result := fVer;
+end;
+
+function TVarDefine.GetVars: IVars;
+begin
+  Result := fVars as IVars;
 end;
 
 procedure TVarDefine.SetVer(const aVer: WideString);
@@ -267,7 +270,7 @@ end;
 function TVarDefine.GetBits: IBits;
 begin
   if fBits = nil then
-     fBits := TBits.Create;
+    fBits := TBits.Create;
   Result := fBits;
 end;
 
@@ -279,7 +282,7 @@ end;
 function TVarDefine.GetPickList: IPickList;
 begin
   if fPickList = nil then
-    fPickList := TPickList.Create;
+    fPickList := TPickList.Create(Self) as IPickList;
   Result := fPickList;
 end;
 
@@ -333,4 +336,3 @@ end;
 
 
 end.
-

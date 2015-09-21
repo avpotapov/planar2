@@ -18,25 +18,26 @@ type
   TBitDefine = class(TBase, IBitDefine, IClonableBitDefine)
   private
     fBits: TBits;
-    fName: widestring;
-    fShortDescription: widestring;
+    fName: WideString;
+    fShortDescription: WideString;
     fDescription: IDescription;
-    fVer: widestring;
-
+    fVer: WideString;
   private
     function GetIndex: byte;
     procedure SetIndex(const aIndex: byte);
 
-    function GetName: widestring;
-    procedure SetName(const aName: widestring);
+    function GetName: WideString;
+    procedure SetName(const aName: WideString);
 
-    function GetShortDescription: widestring;
-    procedure SetShortDescription(const aShortDescription: widestring);
+    function GetShortDescription: WideString;
+    procedure SetShortDescription(const aShortDescription: WideString);
 
     function GetDescription: IDescription;
 
-    function GetVer: widestring;
-    procedure SetVer(const aVer: widestring);
+    function GetVer: WideString;
+    procedure SetVer(const aVer: WideString);
+
+    function GetBits: IBits;
 
   public
     constructor Create(const aBits: TBits = nil); reintroduce;
@@ -103,23 +104,23 @@ begin
 
 end;
 
-function TBitDefine.GetName: widestring;
+function TBitDefine.GetName: WideString;
 begin
   Result := fName;
 end;
 
-procedure TBitDefine.SetName(const aName: widestring);
+procedure TBitDefine.SetName(const aName: WideString);
 begin
   if not SameText(fName, aName) then
     fName := aName;
 end;
 
-function TBitDefine.GetShortDescription: widestring;
+function TBitDefine.GetShortDescription: WideString;
 begin
   Result := fShortDescription;
 end;
 
-procedure TBitDefine.SetShortDescription(const aShortDescription: widestring);
+procedure TBitDefine.SetShortDescription(const aShortDescription: WideString);
 begin
   if not SameText(fShortDescription, aShortDescription) then
     fShortDescription := aShortDescription;
@@ -132,15 +133,20 @@ begin
   Result := fDescription;
 end;
 
-function TBitDefine.GetVer: widestring;
+function TBitDefine.GetVer: WideString;
 begin
   Result := fVer;
 end;
 
-procedure TBitDefine.SetVer(const aVer: widestring);
+procedure TBitDefine.SetVer(const aVer: WideString);
 begin
   if not SameText(fVer, aVer) then
     fVer := aVer;
+end;
+
+function TBitDefine.GetBits: IBits;
+begin
+  Result := fBits;
 end;
 
 function TBitDefine.Clone(const aDeep: boolean): IBitDefine;
