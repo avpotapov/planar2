@@ -4,11 +4,11 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="12">
+    <Units Count="6">
       <Unit0>
         <Filename Value="libraries.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="3" Y="14"/>
+        <CursorPos X="22" Y="10"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -16,10 +16,10 @@
         <Filename Value="units\ulibraries.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uLibraries"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="13"/>
-        <CursorPos X="26" Y="10"/>
-        <FoldState Value=" TJN1Jd"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="52"/>
+        <CursorPos X="14" Y="80"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -27,8 +27,8 @@
         <Filename Value="..\common\defs\udefs.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uDefs"/>
-        <EditorIndex Value="8"/>
-        <CursorPos X="3" Y="12"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="67"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -42,81 +42,24 @@
         <UsageCount Value="23"/>
       </Unit3>
       <Unit4>
-        <Filename Value="units\upickitem.pas"/>
+        <Filename Value="units\ulibrariescls.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="uPickItem"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="88"/>
-        <CursorPos X="7" Y="71"/>
-        <UsageCount Value="23"/>
+        <UnitName Value="uLibrariesCls"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="52"/>
+        <CursorPos X="3" Y="25"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
-        <Filename Value="units\ubase.pas"/>
+        <Filename Value="..\common\fpgext\ufglextcls.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="uBase"/>
-        <EditorIndex Value="7"/>
-        <CursorPos X="19" Y="28"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
       </Unit5>
-      <Unit6>
-        <Filename Value="units\udescription.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uDescription"/>
-        <EditorIndex Value="9"/>
-        <CursorPos X="13" Y="9"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="units\upicklist.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uPickList"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="7"/>
-        <CursorPos Y="13"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="units\ubitdefine.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uBitDefine"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="92"/>
-        <CursorPos X="3" Y="41"/>
-        <UsageCount Value="21"/>
-        <Loaded Value="True"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="units\ubasemap.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uBaseMap"/>
-        <EditorIndex Value="4"/>
-        <CursorPos X="40" Y="10"/>
-        <UsageCount Value="21"/>
-        <Loaded Value="True"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="units\ubits.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uBits"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="19"/>
-        <CursorPos X="17" Y="39"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-      </Unit10>
-      <Unit11>
-        <Filename Value="units\uvardefine.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uVarDefine"/>
-        <EditorIndex Value="10"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-      </Unit11>
     </Units>
   </ProjectSession>
 </CONFIG>

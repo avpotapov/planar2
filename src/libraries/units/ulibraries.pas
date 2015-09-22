@@ -77,7 +77,7 @@ type
   ILibraries = interface(IBase)
     ['{7E1E04F0-581D-4789-A3FF-52850E371A10}']
     function GetLibrary(ATypeLibrary: TTypeLibrary): ILibrary;
-  	property AllLibraries[ATypeLibrary: TTypeLibrary] : ILibrary read GetLibrary; default;
+  	property Libraries[ATypeLibrary: TTypeLibrary] : ILibrary read GetLibrary; default;
   end;
 
   // Коллекция модулей библиотеки
@@ -371,9 +371,6 @@ type
   IClonableBitDefine = specialize IClonable<IBitDefine>;
 
   // Коллекция групп переменных конфигурации
-
-  { IGroups }
-
   IGroups = interface(IBase)
     ['{4A426538-0847-433E-AA2C-C55E32CD3DB8}']
     function GetModule: IModule;
@@ -432,6 +429,10 @@ type
 end;
 
 
+  {$REGION EXTERNAL}
+  function GetNewLibraries: ILibraries; external 'libraries.dll';
+  function GetNewGuid: String; external 'libraries.dll';
+  {$ENDREGION EXTERNAL}
 
 implementation
 
